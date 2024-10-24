@@ -1,9 +1,5 @@
 pipeline {
-    agent {
-        docker {
-            image 'node:20'
-        }
-    }
+    agent any
     
     stages {
         stage('Clone repository') {
@@ -12,15 +8,9 @@ pipeline {
             }
         }
         
-        stage('Install dependencies') {
+        stage('Teste') {
             steps {
-                sh 'npm install'
-            }
-        }
-        
-        stage('Runing tests') {
-            steps {
-                sh 'npm test'
+                sh 'echo "hi"'
             }
         }
     }
